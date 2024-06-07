@@ -1,13 +1,16 @@
 package M_D;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Tarefas {
 	
-	private boolean exercicios;
-	private boolean skinCare;
-	private double litrosDeAgua;
-	private LocalDate dia;
+	DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+	
+	boolean exercicios;
+	boolean skinCare;
+	double litrosDeAgua;
+	LocalDate dia;
 	
 	public Tarefas(boolean exercicios, boolean skinCare, double litrosDeAgua, LocalDate dia) {
 		this.exercicios = exercicios;
@@ -16,36 +19,13 @@ public class Tarefas {
 		this.dia = dia;
 	}
 
-	public boolean isExercicios() {
-		return exercicios;
-	}
 
-	public void setExercicios(boolean exercicios) {
-		this.exercicios = exercicios;
-	}
-
-	public boolean isSkinCare() {
-		return skinCare;
-	}
-
-	public void setSkinCare(boolean skinCare) {
-		this.skinCare = skinCare;
-	}
-
-	public double getLitrosDeAgua() {
-		return litrosDeAgua;
-	}
-
-	public void setLitrosDeAgua(double litrosDeAgua) {
-		this.litrosDeAgua = litrosDeAgua;
-	}
-
-	public LocalDate getDia() {
-		return dia;
-	}
-
-	public void setDia(LocalDate dia) {
-		this.dia = dia;
+	@Override
+	public String toString() {
+		return "[Tarefas]: exercicios= " + exercicios +
+				", skinCare= " + skinCare +
+				", litrosDeAgua= " + litrosDeAgua + "L"
+				+ ", dia= |" + dia.format(dtf) + "|";
 	}
 	
 	

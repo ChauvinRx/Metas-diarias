@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class Usuario {
 	
-	private String nome;
-	private String email;
-	private double peso;
+	String nome;
+	String email;
+	double peso;
 	ArrayList<Tarefas> tarefas;
 	
 	
@@ -20,31 +20,11 @@ public class Usuario {
 	public void adicionarTarefa(Tarefas tarefa) {
 		tarefas.add(tarefa);
     }
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public double getPeso() {
-		return peso;
-	}
-
-	public void setPeso(double peso) {
-		this.peso = peso;
-	}
 	
-	
+	public void listarTarefas() {
+        for (Tarefas tarefa : tarefas) {
+            System.out.println(tarefa);
+        }
+    }
 
 }
